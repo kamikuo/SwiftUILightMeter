@@ -11,17 +11,6 @@ import AVFoundation
 
 class LightMeter: ObservableObject {
     
-    struct ExposureSetting {
-        var aperture: Float = 1.0
-        var apertureLock = false
-        
-        var speed: Float = 1.0
-        var speedLock = false
-        
-        var iso: Float = 100
-        var isoLock = false
-    }
-    
     let camera = Camera()
     
     private lazy var displayLink: CADisplayLink = {
@@ -36,9 +25,12 @@ class LightMeter: ObservableObject {
     
     @Published var exposureStops = ExposureStops(stops: .full)
     
-    @Published var exposureSetting = ExposureSetting() {
-        didSet { update() }
-    }
+    @Published var aperture: Float = 1.0 { didSet { update() } }
+    @Published var apertureLock = false { didSet { update() } }
+    @Published var speed: Float = 1.0 { didSet { update() } }
+    @Published var speedLock = false { didSet { update() } }
+    @Published var iso: Float = 100 { didSet { update() } }
+    @Published var isoLock = false { didSet { update() } }
     
     @Published private(set) var exposureOffset: Float = 0
     
@@ -59,53 +51,46 @@ class LightMeter: ObservableObject {
         guard !updating else { return }
         updating = true
         
-        var es = self.exposureSetting
-        
-        if es.isoLock && es.speedLock && es.apertureLock {
+        if isoLock && speedLock && apertureLock {
             //preview mode
-            let lockEV = ExposureValue(aperture: es.aperture, speed: es.speed, iso: es.iso)
-            let iso = lockEV.iso(withAperture: camera.aperture, speed: es.speed)
-            camera.setCustomExposure(speed: es.speed, iso: iso)
+            let lockEV = ExposureValue(aperture: aperture, speed: speed, iso: iso)
+            let iso = lockEV.iso(withAperture: camera.aperture, speed: speed)
+            camera.setCustomExposure(speed: speed, iso: iso)
         } else {
-            //
             camera.clearCustomExposure()
             
-            if es.isoLock {
-                if es.speedLock {
+            if isoLock {
+                if speedLock {
                     //s mode
-                    es.aperture = exposureStops.aperture(from: exposureValue.aperture(withSpeed: es.speed, iso: es.iso))
-                } else if es.apertureLock {
+                    aperture = exposureStops.aperture(from: exposureValue.aperture(withSpeed: speed, iso: iso))
+                } else if apertureLock {
                     //a mode
-                    es.speed = exposureStops.speed(from: exposureValue.speed(withAperture: es.aperture, iso: es.iso))
+                    speed = exposureStops.speed(from: exposureValue.speed(withAperture: aperture, iso: iso))
                 } else {
                     //p mode
-                    es.aperture = exposureStops.aperture(from: camera.aperture)
-                    es.speed = exposureStops.speed(from: exposureValue.speed(withAperture: es.aperture, iso: es.iso))
+                    aperture = exposureStops.aperture(from: camera.aperture)
+                    speed = exposureStops.speed(from: exposureValue.speed(withAperture: aperture, iso: iso))
                 }
-            } else if es.speedLock {
-                if !es.apertureLock {
+            } else if speedLock {
+                if !apertureLock {
                     //s mode & iso auto
-                    es.aperture = exposureStops.aperture(from: camera.aperture)
+                    aperture = exposureStops.aperture(from: camera.aperture)
                 }
                 //iso auto
-                es.iso = exposureStops.iso(from: exposureValue.iso(withAperture: es.aperture, speed: es.speed))
-            } else if es.apertureLock {
+                iso = exposureStops.iso(from: exposureValue.iso(withAperture: aperture, speed: speed))
+            } else if apertureLock {
                 //a mode & iso auto
-                es.speed = exposureStops.speed(from: camera.speed)
-                es.iso = exposureStops.iso(from: exposureValue.iso(withAperture: es.aperture, speed: es.speed))
+                speed = exposureStops.speed(from: camera.speed)
+                iso = exposureStops.iso(from: exposureValue.iso(withAperture: aperture, speed: speed))
             } else {
                 //all auto
-                es.aperture = exposureStops.aperture(from: camera.aperture)
-                es.speed = exposureStops.speed(from: camera.speed)
-                es.iso = exposureStops.iso(from: exposureValue.iso(withAperture: es.aperture, speed: es.speed))
+                aperture = exposureStops.aperture(from: camera.aperture)
+                speed = exposureStops.speed(from: camera.speed)
+                iso = exposureStops.iso(from: exposureValue.iso(withAperture: aperture, speed: speed))
             }
-            
-            exposureSetting = es
         }
         
-        exposureOffset = ExposureValue(aperture: es.aperture, speed: es.speed, iso: es.iso).rawValue - exposureValue.rawValue
-        
-//        print(exposureValue, exposureOffset, camera.exposureValue, camera.speed, camera.aperture, camera.iso)
+        exposureOffset = ExposureValue(aperture: aperture, speed: speed, iso: iso).rawValue - exposureValue.rawValue
         
         updating = false
     }

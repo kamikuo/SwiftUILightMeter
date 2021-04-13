@@ -38,10 +38,10 @@ struct LightMeterPanel: View {
                     Spacer()
                     
                     Picker(selection: Binding(get: {
-                        lightMeter.exposureSetting.speed
+                        lightMeter.speed
                     }, set: { val in
-                        lightMeter.exposureSetting.speedLock = true
-                        lightMeter.exposureSetting.speed = val
+                        lightMeter.speedLock = true
+                        lightMeter.speed = val
                     }), label: Text("ISO"), content: {
                         ForEach(lightMeter.exposureStops.speedStops, id: \.self) { speed in
                             Text(speedToString(speed))
@@ -63,10 +63,10 @@ struct LightMeterPanel: View {
                     Spacer()
 
                     Picker(selection: Binding(get: {
-                        lightMeter.exposureSetting.aperture
+                        lightMeter.aperture
                     }, set: { val in
-                        lightMeter.exposureSetting.apertureLock = true
-                        lightMeter.exposureSetting.aperture = val
+                        lightMeter.apertureLock = true
+                        lightMeter.aperture = val
                     }), label: Text("ISO"), content: {
                         ForEach(lightMeter.exposureStops.apertureStops, id: \.self) { aperture in
                             Text(apertureToString(aperture))
@@ -88,10 +88,10 @@ struct LightMeterPanel: View {
                     Spacer()
 
                     Picker(selection: Binding(get: {
-                        lightMeter.exposureSetting.iso
+                        lightMeter.iso
                     }, set: { val in
-                        lightMeter.exposureSetting.isoLock = true
-                        lightMeter.exposureSetting.iso = val
+                        lightMeter.isoLock = true
+                        lightMeter.iso = val
                     }), label: Text("ISO"), content: {
                         ForEach(lightMeter.exposureStops.isoStops, id: \.self) { iso in
                             Text(String(Int(iso)))
@@ -122,7 +122,7 @@ struct LightMeterPanel: View {
                             .foregroundColor(.white)
                             .font(.system(size: 12))
                         
-                        Toggle("", isOn: $lightMeter.exposureSetting.speedLock)
+                        Toggle("", isOn: $lightMeter.speedLock)
                             .toggleStyle(LockToggleStyle())
                             .padding(.top, 2.0)
                         
@@ -137,7 +137,7 @@ struct LightMeterPanel: View {
                             .foregroundColor(.white)
                             .font(.system(size: 12))
                         
-                        Toggle("", isOn: $lightMeter.exposureSetting.apertureLock)
+                        Toggle("", isOn: $lightMeter.apertureLock)
                             .toggleStyle(LockToggleStyle())
                             .padding(.top, 2.0)
                         
@@ -152,7 +152,7 @@ struct LightMeterPanel: View {
                             .foregroundColor(.white)
                             .font(.system(size: 12))
                         
-                        Toggle("", isOn: $lightMeter.exposureSetting.isoLock)
+                        Toggle("", isOn: $lightMeter.isoLock)
                             .toggleStyle(LockToggleStyle())
                             .padding(.top, 2.0)
                         
