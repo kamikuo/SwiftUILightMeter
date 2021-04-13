@@ -25,12 +25,59 @@ class LightMeter: ObservableObject {
     
     @Published var exposureStops = ExposureStops(stops: .full)
     
-    @Published var aperture: Float = 1.0 { didSet { update() } }
-    @Published var apertureLock = false { didSet { update() } }
-    @Published var speed: Float = 1.0 { didSet { update() } }
-    @Published var speedLock = false { didSet { update() } }
-    @Published var iso: Float = 100 { didSet { update() } }
-    @Published var isoLock = false { didSet { update() } }
+    @Published var aperture: Float = UserDefaults().float(forKey: "aperture") {
+        didSet {
+            if oldValue != aperture && apertureLock && !updating {
+                UserDefaults().setValue(aperture, forKey: "aperture")
+            }
+            update()
+        }
+    }
+    @Published var apertureLock = UserDefaults().bool(forKey: "apertureLock") {
+        didSet {
+            if oldValue != apertureLock {
+                UserDefaults().setValue(apertureLock, forKey: "apertureLock")
+                UserDefaults().setValue(aperture, forKey: "aperture")
+            }
+            update()
+        }
+    }
+    
+    @Published var speed: Float = UserDefaults().float(forKey: "speed") {
+        didSet {
+            if oldValue != speed && speedLock && !updating {
+                UserDefaults().setValue(speed, forKey: "speed")
+            }
+            update()
+        }
+    }
+    @Published var speedLock = UserDefaults().bool(forKey: "speedLock") {
+        didSet {
+            if oldValue != speedLock {
+                UserDefaults().setValue(speedLock, forKey: "speedLock")
+                UserDefaults().setValue(speed, forKey: "speed")
+            }
+            update()
+        }
+    }
+    
+    @Published var iso: Float = UserDefaults().float(forKey: "iso") {
+        didSet {
+            if oldValue != iso && isoLock && !updating {
+                UserDefaults().setValue(iso, forKey: "iso")
+            }
+            update()
+        }
+    }
+    @Published var isoLock = UserDefaults().bool(forKey: "isoLock") {
+        didSet {
+            if oldValue != isoLock {
+                UserDefaults().setValue(isoLock, forKey: "isoLock")
+                UserDefaults().setValue(iso, forKey: "iso")
+            }
+            update()
+        }
+    }
     
     @Published private(set) var exposureOffset: Float = 0
     
