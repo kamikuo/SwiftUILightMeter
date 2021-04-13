@@ -58,14 +58,16 @@ class Camera {
         
         session.startRunning()
         
-        //disable HDR
-        do {
-            try cameraDevice.lockForConfiguration()
-            cameraDevice.automaticallyAdjustsVideoHDREnabled = false
-            cameraDevice.isVideoHDREnabled = false
-            cameraDevice.unlockForConfiguration()
-        } catch {
+        if cameraDevice.activeFormat.isVideoHDRSupported {
+            //disable HDR
+            do {
+                try cameraDevice.lockForConfiguration()
+                cameraDevice.automaticallyAdjustsVideoHDREnabled = false
+                cameraDevice.isVideoHDREnabled = false
+                cameraDevice.unlockForConfiguration()
+            } catch {
 
+            }
         }
     }
     
