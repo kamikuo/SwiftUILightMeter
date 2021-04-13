@@ -1,0 +1,646 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5314EC4026230D0500D8F37B /* ExposureValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5314EC3F26230D0500D8F37B /* ExposureValue.swift */; };
+		5314EC4526234E4500D8F37B /* ExposureStops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5314EC4426234E4500D8F37B /* ExposureStops.swift */; };
+		5314EC982624992A00D8F37B /* LockToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5314EC972624992A00D8F37B /* LockToggleStyle.swift */; };
+		53D7E193261F666F003011B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7E192261F666F003011B8 /* AppDelegate.swift */; };
+		53D7E195261F666F003011B8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7E194261F666F003011B8 /* SceneDelegate.swift */; };
+		53D7E197261F666F003011B8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7E196261F666F003011B8 /* ContentView.swift */; };
+		53D7E199261F6672003011B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53D7E198261F6672003011B8 /* Assets.xcassets */; };
+		53D7E19C261F6672003011B8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53D7E19B261F6672003011B8 /* Preview Assets.xcassets */; };
+		53D7E19F261F6672003011B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53D7E19D261F6672003011B8 /* LaunchScreen.storyboard */; };
+		53D7E1AA261F6673003011B8 /* LightMeterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7E1A9261F6673003011B8 /* LightMeterTests.swift */; };
+		53D7E1B5261F6673003011B8 /* LightMeterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7E1B4261F6673003011B8 /* LightMeterUITests.swift */; };
+		53D7E1C9261F7B0E003011B8 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7E1C8261F7B0E003011B8 /* CameraPreview.swift */; };
+		53D7E1CE261F7F97003011B8 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7E1CD261F7F97003011B8 /* Camera.swift */; };
+		53D7E1DE26222066003011B8 /* LightMeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7E1DD26222066003011B8 /* LightMeter.swift */; };
+		53D7E1EA2622DC33003011B8 /* LightMeterPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7E1E92622DC33003011B8 /* LightMeterPanel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		53D7E1A6261F6673003011B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53D7E187261F666F003011B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53D7E18E261F666F003011B8;
+			remoteInfo = LightMeter;
+		};
+		53D7E1B1261F6673003011B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53D7E187261F666F003011B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53D7E18E261F666F003011B8;
+			remoteInfo = LightMeter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5314EC3F26230D0500D8F37B /* ExposureValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureValue.swift; sourceTree = "<group>"; };
+		5314EC4426234E4500D8F37B /* ExposureStops.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExposureStops.swift; sourceTree = "<group>"; };
+		5314EC972624992A00D8F37B /* LockToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockToggleStyle.swift; sourceTree = "<group>"; };
+		53D7E18F261F666F003011B8 /* LightMeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LightMeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		53D7E192261F666F003011B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		53D7E194261F666F003011B8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		53D7E196261F666F003011B8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		53D7E198261F6672003011B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		53D7E19B261F6672003011B8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		53D7E19E261F6672003011B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		53D7E1A0261F6672003011B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53D7E1A5261F6673003011B8 /* LightMeterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LightMeterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		53D7E1A9261F6673003011B8 /* LightMeterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightMeterTests.swift; sourceTree = "<group>"; };
+		53D7E1AB261F6673003011B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53D7E1B0261F6673003011B8 /* LightMeterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LightMeterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		53D7E1B4261F6673003011B8 /* LightMeterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightMeterUITests.swift; sourceTree = "<group>"; };
+		53D7E1B6261F6673003011B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53D7E1C8261F7B0E003011B8 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
+		53D7E1CD261F7F97003011B8 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		53D7E1DD26222066003011B8 /* LightMeter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightMeter.swift; sourceTree = "<group>"; };
+		53D7E1E92622DC33003011B8 /* LightMeterPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightMeterPanel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		53D7E18C261F666F003011B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53D7E1A2261F6673003011B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53D7E1AD261F6673003011B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		53D7E186261F666F003011B8 = {
+			isa = PBXGroup;
+			children = (
+				53D7E191261F666F003011B8 /* LightMeter */,
+				53D7E1A8261F6673003011B8 /* LightMeterTests */,
+				53D7E1B3261F6673003011B8 /* LightMeterUITests */,
+				53D7E190261F666F003011B8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		53D7E190261F666F003011B8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				53D7E18F261F666F003011B8 /* LightMeter.app */,
+				53D7E1A5261F6673003011B8 /* LightMeterTests.xctest */,
+				53D7E1B0261F6673003011B8 /* LightMeterUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		53D7E191261F666F003011B8 /* LightMeter */ = {
+			isa = PBXGroup;
+			children = (
+				53D7E1E82622DBFA003011B8 /* Model */,
+				53D7E1E72622DBE9003011B8 /* View */,
+				53D7E192261F666F003011B8 /* AppDelegate.swift */,
+				53D7E194261F666F003011B8 /* SceneDelegate.swift */,
+				53D7E198261F6672003011B8 /* Assets.xcassets */,
+				53D7E19D261F6672003011B8 /* LaunchScreen.storyboard */,
+				53D7E1A0261F6672003011B8 /* Info.plist */,
+				53D7E19A261F6672003011B8 /* Preview Content */,
+			);
+			path = LightMeter;
+			sourceTree = "<group>";
+		};
+		53D7E19A261F6672003011B8 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				53D7E19B261F6672003011B8 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		53D7E1A8261F6673003011B8 /* LightMeterTests */ = {
+			isa = PBXGroup;
+			children = (
+				53D7E1A9261F6673003011B8 /* LightMeterTests.swift */,
+				53D7E1AB261F6673003011B8 /* Info.plist */,
+			);
+			path = LightMeterTests;
+			sourceTree = "<group>";
+		};
+		53D7E1B3261F6673003011B8 /* LightMeterUITests */ = {
+			isa = PBXGroup;
+			children = (
+				53D7E1B4261F6673003011B8 /* LightMeterUITests.swift */,
+				53D7E1B6261F6673003011B8 /* Info.plist */,
+			);
+			path = LightMeterUITests;
+			sourceTree = "<group>";
+		};
+		53D7E1E72622DBE9003011B8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				53D7E196261F666F003011B8 /* ContentView.swift */,
+				53D7E1C8261F7B0E003011B8 /* CameraPreview.swift */,
+				53D7E1E92622DC33003011B8 /* LightMeterPanel.swift */,
+				5314EC972624992A00D8F37B /* LockToggleStyle.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		53D7E1E82622DBFA003011B8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				53D7E1CD261F7F97003011B8 /* Camera.swift */,
+				5314EC3F26230D0500D8F37B /* ExposureValue.swift */,
+				5314EC4426234E4500D8F37B /* ExposureStops.swift */,
+				53D7E1DD26222066003011B8 /* LightMeter.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		53D7E18E261F666F003011B8 /* LightMeter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53D7E1B9261F6673003011B8 /* Build configuration list for PBXNativeTarget "LightMeter" */;
+			buildPhases = (
+				53D7E18B261F666F003011B8 /* Sources */,
+				53D7E18C261F666F003011B8 /* Frameworks */,
+				53D7E18D261F666F003011B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LightMeter;
+			productName = LightMeter;
+			productReference = 53D7E18F261F666F003011B8 /* LightMeter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		53D7E1A4261F6673003011B8 /* LightMeterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53D7E1BC261F6673003011B8 /* Build configuration list for PBXNativeTarget "LightMeterTests" */;
+			buildPhases = (
+				53D7E1A1261F6673003011B8 /* Sources */,
+				53D7E1A2261F6673003011B8 /* Frameworks */,
+				53D7E1A3261F6673003011B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				53D7E1A7261F6673003011B8 /* PBXTargetDependency */,
+			);
+			name = LightMeterTests;
+			productName = LightMeterTests;
+			productReference = 53D7E1A5261F6673003011B8 /* LightMeterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		53D7E1AF261F6673003011B8 /* LightMeterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53D7E1BF261F6673003011B8 /* Build configuration list for PBXNativeTarget "LightMeterUITests" */;
+			buildPhases = (
+				53D7E1AC261F6673003011B8 /* Sources */,
+				53D7E1AD261F6673003011B8 /* Frameworks */,
+				53D7E1AE261F6673003011B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				53D7E1B2261F6673003011B8 /* PBXTargetDependency */,
+			);
+			name = LightMeterUITests;
+			productName = LightMeterUITests;
+			productReference = 53D7E1B0261F6673003011B8 /* LightMeterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		53D7E187261F666F003011B8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					53D7E18E261F666F003011B8 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					53D7E1A4261F6673003011B8 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 53D7E18E261F666F003011B8;
+					};
+					53D7E1AF261F6673003011B8 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 53D7E18E261F666F003011B8;
+					};
+				};
+			};
+			buildConfigurationList = 53D7E18A261F666F003011B8 /* Build configuration list for PBXProject "LightMeter" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 53D7E186261F666F003011B8;
+			productRefGroup = 53D7E190261F666F003011B8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				53D7E18E261F666F003011B8 /* LightMeter */,
+				53D7E1A4261F6673003011B8 /* LightMeterTests */,
+				53D7E1AF261F6673003011B8 /* LightMeterUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		53D7E18D261F666F003011B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53D7E19F261F6672003011B8 /* LaunchScreen.storyboard in Resources */,
+				53D7E19C261F6672003011B8 /* Preview Assets.xcassets in Resources */,
+				53D7E199261F6672003011B8 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53D7E1A3261F6673003011B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53D7E1AE261F6673003011B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		53D7E18B261F666F003011B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53D7E193261F666F003011B8 /* AppDelegate.swift in Sources */,
+				53D7E1CE261F7F97003011B8 /* Camera.swift in Sources */,
+				53D7E1DE26222066003011B8 /* LightMeter.swift in Sources */,
+				53D7E1C9261F7B0E003011B8 /* CameraPreview.swift in Sources */,
+				5314EC4026230D0500D8F37B /* ExposureValue.swift in Sources */,
+				53D7E1EA2622DC33003011B8 /* LightMeterPanel.swift in Sources */,
+				5314EC982624992A00D8F37B /* LockToggleStyle.swift in Sources */,
+				53D7E195261F666F003011B8 /* SceneDelegate.swift in Sources */,
+				5314EC4526234E4500D8F37B /* ExposureStops.swift in Sources */,
+				53D7E197261F666F003011B8 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53D7E1A1261F6673003011B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53D7E1AA261F6673003011B8 /* LightMeterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53D7E1AC261F6673003011B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53D7E1B5261F6673003011B8 /* LightMeterUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		53D7E1A7261F6673003011B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53D7E18E261F666F003011B8 /* LightMeter */;
+			targetProxy = 53D7E1A6261F6673003011B8 /* PBXContainerItemProxy */;
+		};
+		53D7E1B2261F6673003011B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53D7E18E261F666F003011B8 /* LightMeter */;
+			targetProxy = 53D7E1B1261F6673003011B8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		53D7E19D261F6672003011B8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				53D7E19E261F6672003011B8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		53D7E1B7261F6673003011B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		53D7E1B8261F6673003011B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		53D7E1BA261F6673003011B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"LightMeter/Preview Content\"";
+				DEVELOPMENT_TEAM = G67HGF92AF;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = LightMeter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tw.kamikuo.LightMeter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		53D7E1BB261F6673003011B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"LightMeter/Preview Content\"";
+				DEVELOPMENT_TEAM = G67HGF92AF;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = LightMeter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tw.kamikuo.LightMeter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		53D7E1BD261F6673003011B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G67HGF92AF;
+				INFOPLIST_FILE = LightMeterTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tw.kamikuo.LightMeterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LightMeter.app/LightMeter";
+			};
+			name = Debug;
+		};
+		53D7E1BE261F6673003011B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G67HGF92AF;
+				INFOPLIST_FILE = LightMeterTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tw.kamikuo.LightMeterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LightMeter.app/LightMeter";
+			};
+			name = Release;
+		};
+		53D7E1C0261F6673003011B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G67HGF92AF;
+				INFOPLIST_FILE = LightMeterUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tw.kamikuo.LightMeterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LightMeter;
+			};
+			name = Debug;
+		};
+		53D7E1C1261F6673003011B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = G67HGF92AF;
+				INFOPLIST_FILE = LightMeterUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tw.kamikuo.LightMeterUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LightMeter;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		53D7E18A261F666F003011B8 /* Build configuration list for PBXProject "LightMeter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53D7E1B7261F6673003011B8 /* Debug */,
+				53D7E1B8261F6673003011B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53D7E1B9261F6673003011B8 /* Build configuration list for PBXNativeTarget "LightMeter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53D7E1BA261F6673003011B8 /* Debug */,
+				53D7E1BB261F6673003011B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53D7E1BC261F6673003011B8 /* Build configuration list for PBXNativeTarget "LightMeterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53D7E1BD261F6673003011B8 /* Debug */,
+				53D7E1BE261F6673003011B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53D7E1BF261F6673003011B8 /* Build configuration list for PBXNativeTarget "LightMeterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53D7E1C0261F6673003011B8 /* Debug */,
+				53D7E1C1261F6673003011B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 53D7E187261F666F003011B8 /* Project object */;
+}
